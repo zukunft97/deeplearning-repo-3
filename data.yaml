@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 66
+names: ['Fish_cake', 'Kimbab_Ham', 'Lotus_root', 'Perilla_leaf', 'White_Mushroom', 'anchovy', 'asparagus', 'avocado', 'bacon', 'bacon_sprouts', 'bean', 'bean_sprouts', 'beef', 'beet', 'bok_choy', 'broccoli', 'burdock', 'calamari', 'canned_saury', 'canned_tuna', 'carrot', 'cheese', 'chicken', 'chives', 'cockle', 'corn', 'crab', 'cucumber', 'curcuma', 'duck_meat', 'dumpling', 'egg', 'egg_plant', 'enoki_mushroom', 'fan_mussel', 'ginseng', 'green_onion', 'hairtail', 'kimchi', 'lamb_ribs', 'mackerel', 'meat_for_soup', 'milk', 'napa_cabbage', 'nurungji', 'onion', 'oyster', 'oyster_mushroom', 'paprika', 'pasta_noodles', 'pickle', 'pork', 'potato', 'radish', 'raw_ribs', 'rice_cake', 'salmon', 'sausage', 'scallop', 'seaweed', 'spam', 'squash', 'sweet_potato', 'tomato', 'tomato_sauce', 'water_parsley']
+
+roboflow:
+  workspace: yolostudy-lxjtn
+  project: food-k3oqt
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/yolostudy-lxjtn/food-k3oqt/dataset/3
