@@ -1,13 +1,13 @@
 # 프로젝트 소개
 <p align="center">
-  <img src="https://github.com/zukunft97/deeplearning-repo-3/issues/1#issue-1820399482">
+  <img src="https://github.com/zukunft97/deeplearning-repo-3/assets/117617384/b7b2dd53-269b-4dbb-a5fa-71e662431c0f">
   <img src="https://github.com/zukunft97/deeplearning-repo-3/assets/117617384/679baa91-49ae-4d35-91f9-8bcb74d964bf">
 </p>
-로봇의 카메라를 와 OpenCV를 이용하여 모터를 제어하는 프로젝트
+YOLO V8버전과 myqt를 활용 하여 사용자가 특정 이미지를 업로드하면 그사진속 재료들을 파악하며 그렇게 파악된 음식 재료를 가지고 가공 가능한 음식을 추천해주는 시스템
 
 # 시연 영상
 <p align="center">
-  <img src="https://github.com/addinedu-amr-2th/robo-reop-3/assets/117617384/1d556166-901f-4862-bec8-a2010ec72a7f">
+  <img src="https://github.com/zukunft97/deeplearning-repo-3/assets/117617384/b0429703-1fb0-48b2-89e6-4acc7e38003d">
 </p>
 
 # 목적
