@@ -3,7 +3,7 @@
   <img src="https://github.com/zukunft97/deeplearning-repo-3/assets/117617384/b7b2dd53-269b-4dbb-a5fa-71e662431c0f">,
   <img src="https://github.com/zukunft97/deeplearning-repo-3/assets/117617384/679baa91-49ae-4d35-91f9-8bcb74d964bf">
 </p>
-YOLO V8버전과 myqt를 활용 하여 사용자가 특정 이미지를 업로드하면 그사진속 재료들을 파악하며 그렇게 파악된 음식 재료를 가지고 가공 가능한 음식을 추천해주는 시스템
+YOLO V8버전과 pyqt를 활용 하여 사용자가 특정 이미지를 업로드하면 그사진속 재료들을 파악하며 그렇게 파악된 음식 재료를 가지고 가공 가능한 음식을 추천해주는 시스템
 
 # 시연 영상
 <p align="center">
@@ -30,28 +30,20 @@ YOLO V8버전과 myqt를 활용 하여 사용자가 특정 이미지를 업로�
   * 구글에 돌아 다니는 음식 재료 이미지를 수집
   
 * roboflow를 활용한 라벨링 작업<br/>
-  <br/> 1.카메라를 통해 본 이미지
-  <br/> 2.ROI(Region of Interest)를 설정해 원하는 대상만 남김
-  <br/> 3.HLS 필터를 이용하여 원하는 색범위안의 물체만 인식
-  <br/> 4.Gray scale과 thershold를 통해 binarization
-  <br/> 5.perspective Transform를 통해 양쪽의 차선을 일직선으로 배치
-  <br/> 6.sliding_window 곡선을 곡선으로 인식하기위해 사용
-
-
-  
-* 전체 시스템 구성도<br/>
-<p align="center">
-<img src="https://github.com/addinedu-amr-2th/robo-reop-3/assets/124948850/016970c8-fd77-4205-a0d0-ddf4d85bfed7">
-</p>
-<p align="center">
-<img src="https://github.com/addinedu-amr-2th/robo-reop-3/assets/124948850/ce566f23-ede3-44e7-901d-7dae5ae936ad">
-</p>
-
-  * 이미지 전처리후 아래 2번 사진의 두개의 선의 픽셀 차이값을 가지고 로봇의 모터를 제어
-  <br/>  1번 사진 왼쪽 차선과 오른쪽 차선의 인식양을 인식하다가 표준값 보다 픽셀양이 적다면 한쪽으로 치우쳐져 있다고 판단
-  <br/>  3번 사진은 교차로를 만나을때의 사진인데 사진 상단의 양쪽 픽셀 값이 없어진다면 직진을 하도록 제어
-  
-
+  * 수집한 이미지를 이용하여 각 음식 사진의 라벨링실시
+  * 부족한 데이터를 roboflow에서 지원하는 증강법을 이용하여 데이터셋 늘리기
+ 
+* YOLO V8 모델 학습 실시 <br/>
+  * 라벨링된 이미지를 YOLO V8 버전의 모델중 하나를 특정하여 학습 실시
+  * 학습된 모델을 돌려봐서 결과가 잘나오는지 확인 (만약 결과가 좋지 않다면 원인 분석 해보기)
+ 
+* pyqt 제작 하기 <br/>
+  * pyqt의 기능을 활용하여 여러 기능 구현
+    * 이미지 불러오는 기능
+    * 불러온 이미지를 YOLO V8 모델을 이용하여 디텍션
+    * 티텍션 결과를 리스트화 하여 텍스트 박스에 중복을 제거하여 표시
+    * 음식 재료를 가지고 만들수 있는 음식을 2가지 버전으로 추천(재료 전체가 있어야 추천, 1개의 재료만 있어도 추천)
+    * 추천된 음식의 레시피 사이트 링크 추천
 
 # 의의
 - 주행중에 차선의 중앙을 인식하여 차선에서 벗어나는것을 방지하기 위해서는 최소한의 딜레이와 가벼운 코드가 필요하다.
