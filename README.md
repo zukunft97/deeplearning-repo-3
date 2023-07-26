@@ -46,32 +46,18 @@ YOLO V8버전과 pyqt를 활용 하여 사용자가 특정 이미지를 업로�
     * 추천된 음식의 레시피 사이트 링크 추천
 
 # 의의
-- 주행중에 차선의 중앙을 인식하여 차선에서 벗어나는것을 방지하기 위해서는 최소한의 딜레이와 가벼운 코드가 필요하다.
-  <br/> 그럴때 우리의 코드는 훌륭한 해결 방안중에 1안이 될거라고 믿습니다.
-  <br/> 딥러닝 모델을 활용하여 인식하는 것이 아닌 Open CV를 사용하여 가볍고 빠른 인식이 가능할 것이하고 판단된다.
+- 내가 생각한 벙법대로 라벨링을 진행한뒤 결과룰 보고 무엇이 문제 였는지를 파악해 보기
+- YOLO V8의 결과 값을 가지고 다른 프로그램에서 사용해 보기
 
 #  회고
-- 하드 웨어의 한계
-  - 로봇에 기본적으로 탑제 되었던 라즈베리 카메라의 경우 카메라의 이미지가 필요했던 이미지 보다 시야각이 너무 좁게 나와서 카메라의 이미지와 코드의 호환이 불가능하여 하드웨어의 구조 변경 및 외부 카메라(lenovo 웹캡)를 추가로 장착하여 진행하였다.
-- 계획대로 흘러가지 않는 개발 상황
-  - 원초의 목표는 크게 잡았지만 처음 잡아 놓은목표중 가장 베이스에서 프로젝트를 마감하게 되었다.<br/> 하드웨어적 문제나 팀과의 소통 미스로 인한것들 등이 원인이라 파악된다.<br/>이를 통하여 팀과의 회의를통하여 정보 공유 및 목표치의 변경에 유하게 진행하는 방법을 알게 되었다.
-# 코드 정리
-- /lane_distance : 차선의 중앙 값과 이미지의 중앙값의 차이값을 모터 제어를 위해 송출할때 사용하는 토픽
-- /right_distance_difference : 오른쪽 차선의 인식된 픽셀 값을 송출할때 사용하는 토픽
-- /left_distance_difference : 왼쪽 차선의 인식된 픽셀 값을 송출할때 사용하는 토픽
-- /intersection_flag : 교차로를 인식하였을때 특정 값을 송출할때 사용하는 토픽
-- controll_node : 위 토픽을 발행하기 위한 노드
-- cmd_vel : Twist 형식의 직접적으로 모터를 제어하기 위해 발행하는 토픽
-- teleop_twist_publisher : cmd_vel을 발행하기 위한 노드(linear.x, angular.z 이 두개를 위주로 제어한다.)
-# 발표 자료
-[발표 PPT][link_ppt]
+- 라벨링의 문제
+  - 예) 연어의 라벨링
+    - 손질된 연어와 살아 있는 연어를 같은 라벨로 묶어서 라벨링을 진행
+    - 결과 손질된 연어의 줄무늬 패턴과 살아 있는 연어의 어두운 피부색을 가진것을 연어라고 파악
+    - 검정색 나무 도마위에 손질된 연어가 있는 이미지를 보았을때 손질된 연어를 연어라고 보지 못하고 검정 도마를 연어라고 인식
+    - 2가지 이상의 패턴을 하나의 라벨링으로 보면 안되고 따로 다른이름의 연어1 연어2라고 라벨링을 진행하고 결과값이 저두개가 나왔을때 연어 라고 도출되게 해야함.
 
-[link_ppt]: https://docs.google.com/presentation/d/1TdLDWyX7o4_dsa_KVFDCJpya4sgQwAyP/edit?usp=drive_link&ouid=114791632627429619927&rtpof=true&sd=true "PPT_link"
 # 팀원 소개
-[신대준][link_1]<br/>
-[김세연][link_2]<br/>
-[이용욱][link_3]<br/>
+[이용욱][link_1]<br/>
 
-[link_1]: https://github.com/addinedu-amr-2th/robo-reop-3 "GitHub_link"
-[link_2]: https://github.com/addinedu-amr-2th/robo-reop-3 "GitHub_link"
-[link_3]: https://github.com/addinedu-amr-2th/robo-reop-3 "GitHub_link"
+[link_1]: https://github.com/zukunft97/deeplearning-repo-3 "GitHub_link"
